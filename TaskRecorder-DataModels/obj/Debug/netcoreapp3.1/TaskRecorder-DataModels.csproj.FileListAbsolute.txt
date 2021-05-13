@@ -1,0 +1,16 @@
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Debug\netcoreapp3.1\TaskRecorder-DataModels.deps.json
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Debug\netcoreapp3.1\TaskRecorder-DataModels.dll
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Debug\netcoreapp3.1\TaskRecorder-DataModels.pdb
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.csprojAssemblyReference.cache
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.AssemblyInfo.cs
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.dll
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.pdb
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Debug\netcoreapp3.1\TaskRecorder-DataModels.deps.json
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Debug\netcoreapp3.1\TaskRecorder-DataModels.dll
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Debug\netcoreapp3.1\TaskRecorder-DataModels.pdb
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.csprojAssemblyReference.cache
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.AssemblyInfoInputs.cache
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.AssemblyInfo.cs
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.dll
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Debug\netcoreapp3.1\TaskRecorder-DataModels.pdb

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<TaskRecorder_DataModels.Models.TasksModel>
+@{
+    ViewData["Title"] = "ListTask";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container" style="padding:50px">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="text-info">Task List</h2>
+            </div>
+            <div class="col-6 text-right">
+                <a asp-controller="Task" asp-action="CreateTask" asp-area="Administration" class="btn btn-info"><i class="fa fa-plus"></i>&nbsp;Create New Task</a>
+            </div>
+        </div>
+        <br />
+        <form asp-controller="Task" asp-action="SearchTerm">
+            <p>
+                Title: <input type="text" name="SearchString">
+                <input type="submit" value="Filter" />
+            </p>
+        </form>
+        <br />
+        <br />
+        @if (Model.Any())
+        {
+            <div>
+                <table class="table table-striped border">
+                    <tr class="table-info">
+                        <th>
+                            TaskId
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            UploadedDate
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            AssignedTo
+                        </th>
+                        <th>
+                            IsConfirmed
+                        </th>
+                        <th>
+                            UserId
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach (var task in Model)
+                    {
+                        <tr>
+                            <td>@task.TaskId</td>
+                            <td>@task.Title</td>
+                            <td>@task.Description</td>
+                            <td>@task.UploadedDate</td>
+                            <td>@task.Status</td>
+                            <td>@task.AssignedTo</td>
+                            <td>@task.IsConfirmed</td>
+                            <td>@task.UserId</td>
+
+                            <td>
+                                <div class="btn-group">
+                                    <a asp-controller="Task" asp-action="EditTask" asp-route-taskId="@task.TaskId" class="btn btn-primary">
+                                        Edit
+                                    </a>
+                                    <a asp-controller="Task" asp-action="Details" asp-route-taskId="@task.TaskId" class="btn btn-success">
+                                        Detail
+                                    </a>
+                                    <a asp-controller="Task" asp-action="DeleteTask" asp-route-taskId="@task.TaskId" class="btn btn-danger"
+                                       onclick="return confirm('Are you sure you want to delete task :@task.Title')">
+                                        Delete
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="card">
+                <div class="card-header">
+                    No Task created yet
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Use the button below to create a Task
+                    </h5>
+                    <a class="btn btn-primary" style="width:auto"
+                       asp-controller="Task" asp-action="CreateTask" asp-area="Administration">
+                        Add new Task
+                    </a>
+                </div>
+            </div>
+        }
+    </div>

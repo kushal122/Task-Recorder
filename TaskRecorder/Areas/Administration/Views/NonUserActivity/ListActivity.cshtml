@@ -1,0 +1,83 @@
+﻿@model PaginatedList<TaskRecorder_DataModels.Models.NonUserActivity>
+@{
+    ViewData["Title"] = "ListActivity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div style="padding-left:80px;">
+        <br />
+        <form asp-controller="NonUserActivity" asp-action="SearchTerm">
+            <p>
+                Title: <input type="text" name="SearchString">
+                <input type="submit" value="Filter" />
+            </p>
+        </form>
+        <br />
+        <form asp-action="GetNonUserData" asp-controller="NonUserActivity" asp-area="Administration">
+            Form: <input type="date" name="start" />
+            To: <input type="date" name="end" />
+            <input type="submit" name="submit" value="Search" />
+        </form>
+        <br />
+        <div>
+            <table class="table table-striped border" id="myTable">
+                <thead>
+                    <tr class="table-info">
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Url
+                        </th>
+                        <th>
+                            Data
+                        </th>
+                        <th>
+                            IpAddress
+                        </th>
+                        <th>
+                            ActivityDate
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Url</td>
+                            <td>@item.Data</td>
+                            <td>@item.IpAddress</td>
+                            <td>@item.ActivityDate</td>
+                            @*<td>
+                            <a asp-action="Details" asp-controller="UserActivity" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                        </td>*@
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @{
+                var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+                var nextDisabled = !Model.NextPage ? "disabled" : "";
+            }
+
+            <a asp-action="ListActivity"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn btn-default @prevDisabled">
+                Previous
+            </a>
+            <a asp-action="ListActivity"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn btn-default @nextDisabled">
+                Next
+            </a>
+        </div>
+    </div>
+</div>
+

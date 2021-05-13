@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="container" style="padding-left:650px;padding-top:80px">
+        <h1 class="text-center text-info"> Welcome To Home Page</h1>
+        <br />
+        <div>
+            <div class="pull-left">
+                <h3><b>Click Here To Register</b></h3>
+                <br />
+                <a href="@Url.Action("SignUp","UserLogin" , new { area="User"})">Register</a>
+            </div>
+            <div class="pull-left">
+                <h3><b>Click Here to go to User Pannel</b></h3>
+                <br />
+                <a href="@Url.Action("SignIn","UserLogin" , new { area="User"})">User Login</a>
+            </div>
+            <div class="pull-right">
+                <h3>Click Here to go to User Pannel</h3>
+                <br />
+                <a href="@Url.Action("SignIn","AdminLogin" , new { area="Administration"})">Admin Login</a>
+            </div>
+            <div class="pull-right">
+                <h3>Click Here to Change Password</h3>
+                <br />
+                <a href="@Url.Action("ForgotPassword","ForgotPassword" , new { area="Home"})">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

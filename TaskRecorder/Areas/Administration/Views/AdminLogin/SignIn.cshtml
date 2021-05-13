@@ -1,0 +1,50 @@
+﻿@model TaskRecorder.Areas.User.Models.ViewModels.LoginViewModel
+@{
+    Layout = null;
+    var returnUrl = Context.Request.Query["returnurl"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin - Login</title>
+    <link href="~/Layout/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Layout/css/datepicker3.css" rel="stylesheet">
+    <link href="~/Layout/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">Log in</div>
+                <h1 class="text-center text-danger">@ViewBag.Message</h1>
+                <div class="panel-body">
+                    <form asp-action="SignIn" asp-route-returnUrl="@returnUrl">
+                        <fieldset>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password" class="control-label"></label>
+                                <input asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Login" class="btn btn-primary" />
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Layout/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Layout/js/bootstrap.min.js"></script>
+
+</body>
+</html>

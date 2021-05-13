@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TaskRecorder_DataModels.Models.UserActivity>
+
+@{
+    ViewData["Title"] = "GetUserData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="container" style="padding-left:80px;">
+        <h4>UserActivity</h4>
+        <form asp-action="GetUserData" asp-controller="UserActivity" asp-area="Administration">
+           Form: <input type="date" name="start" />
+           To: <input type="date" name="end" />
+            <input type="submit" name="submit" value="Search" />
+        </form>
+        <hr />
+        <div class="row">
+            <div>
+                <table class="table table-striped border" id="myTable">
+                    <thead>
+                        <tr class="table-info">
+                            <th>
+                                @Html.DisplayNameFor(c => c.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(c => c.Url)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(c => c.Data)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(c => c.UserName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(c => c.IpAddress)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(c => c.ActivityDate)
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @ViewBag.Message
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Url</td>
+                                <td>@item.Data</td>
+                                <td>@item.UserName</td>
+                                <td>@item.IpAddress</td>
+                                <td>@item.ActivityDate</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+    </div>

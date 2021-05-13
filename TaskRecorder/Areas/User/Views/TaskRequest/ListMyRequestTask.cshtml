@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TaskRecorder_DataModels.Models.TaskRequest>
+@{
+    ViewData["Title"] = "ListMyRequestTask";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="padding:50px">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-info">Task List</h2>
+        </div>
+    </div>
+    <br />
+    @if (Model.Any())
+    {
+        <h1 class="text-center text-danger"> @ViewBag.Error</h1>
+        <div>
+            <table class="table table-striped border">
+                <tr class="table-info">
+                    <th>
+                        RequestId
+                    </th>
+                    <th>
+                        TaskId
+                    </th>
+                    <th>
+                        RequestDate
+                    </th>
+                    <th>
+                        DeadLine
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        UserId
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>Action</th>
+                </tr>
+                @foreach (var task in Model)
+                {
+                    <tr>
+                        <td>@task.RequestId</td>
+                        <td>@task.TaskId</td>
+                        <td>@task.RequestDate</td>
+                        <td>@task.DeadLine</td>
+                        <td>@task.Status</td>
+                        <td>@task.UserId</td>
+                        <td>@task.Description</td>
+
+                        <td>
+                            <div class="btn-group">
+                                <a asp-controller="TaskRequest" asp-action="Details" asp-route-taskId="@task.TaskId" class="btn btn-success">
+                                    Detail
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header">
+                No Task created yet
+            </div>
+        </div>
+    }
+</div>
+

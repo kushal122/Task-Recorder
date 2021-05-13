@@ -1,0 +1,84 @@
+﻿@model TaskRecorder_DataModels.Models.TaskRequest
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info"> Details</h2>
+<form asp-action="" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border row">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <div class="col-8">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="RequestId"></label>
+                </div>
+                <div class="col-8">
+                    <input type="hidden" asp-for="RequestId" />
+                    <input asp-for="RequestId" readonly="readonly" class="form-control" />
+                </div>
+                <span asp-validation-for="TaskId" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="TaskId"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="TaskId" readonly="readonly" class="form-control" />
+                </div>
+                <span asp-validation-for="TaskId" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="RequestDate"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="RequestDate" readonly="readonly" class="form-control" />
+                </div>
+                <span asp-validation-for="RequestDate" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="DeadLine"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="DeadLine" readonly="readonly" class="form-control" />
+                </div>
+                <span asp-validation-for="DeadLine" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Status"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Status" readonly="readonly" class="form-control" />
+                </div>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="UserId"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="UserId" readonly="readonly" class="form-control" />
+                </div>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Description"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Description" readonly="readonly" class="form-control" />
+                </div>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="col-8">
+    <a class="btn btn-primary" asp-action="ListTaskRequests" asp-controller="TaskRequests" asp-area="Administration">Back To Index</a>
+</div>

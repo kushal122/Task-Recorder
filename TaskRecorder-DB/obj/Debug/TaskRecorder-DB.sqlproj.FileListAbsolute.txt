@@ -1,0 +1,12 @@
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\bin\Debug\TaskRecorder-DB.dacpac
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\bin\Debug\TaskRecorder_DB.dll
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\bin\Debug\TaskRecorder_DB.pdb
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\obj\Debug\TaskRecorder_DB.dll
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\obj\Debug\TaskRecorder_DB.pdb
+C:\Users\hp\Desktop\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\obj\Debug\TaskRecorder-DB.sqlprojAssemblyReference.cache
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\bin\Debug\TaskRecorder-DB.dacpac
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\bin\Debug\TaskRecorder_DB.dll
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\bin\Debug\TaskRecorder_DB.pdb
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\obj\Debug\TaskRecorder-DB.sqlprojAssemblyReference.cache
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\obj\Debug\TaskRecorder_DB.dll
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DB\obj\Debug\TaskRecorder_DB.pdb

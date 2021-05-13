@@ -1,0 +1,75 @@
+﻿@model IEnumerable<TaskRecorder_DataModels.Models.Users>
+@{
+    ViewData["Title"] = "ListUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container" style="padding:50px">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="text-info">User List</h2>
+            </div>
+            <div class="col-6 text-right">
+                <a asp-controller="UserLogin" asp-action="SignUp" asp-area="User" class="btn btn-info"><i class="fa fa-plus"></i>&nbsp; New User</a>
+            </div>
+        </div>
+        <form asp-controller="Users" asp-action="SearchTerm">
+            <p>
+                Title: <input type="text" name="SearchString">
+                <input type="submit" value="Filter" />
+            </p>
+        </form>
+        <br />
+        @if (Model.Any())
+        {
+            <div>
+                <table class="table table-striped border">
+                    <tr class="table-info">
+                        <th>
+                            Full Name
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.FirstName @user.LastName</td>
+
+                            <td>
+                                <div class="btn-group">
+                                    <a asp-controller="Users" asp-action="EditUser" asp-route-Id="@user.UserId" class="btn btn-primary">
+                                        Edit
+                                    </a>
+                                    <a asp-controller="Users" asp-action="Details" asp-route-id="@user.UserId" class="btn btn-success">
+                                        Detail
+                                    </a>
+                                    <a asp-controller="Users" asp-action="DeleteUser" asp-route-Id="@user.UserId" class="btn btn-danger"
+                                       onclick="return confirm('Are you sure you want to delete user :@user.FirstName')">
+                                        Delete
+                                    </a>
+                                </div>
+                            </td>
+
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="card">
+                <div class="card-header">
+                    No users created yet
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Use the button below to create a user
+                    </h5>
+                    <a class="btn btn-primary" style="width:auto"
+                       asp-controller="Account" asp-action="Register" asp-area="User">
+                        Add new user
+                    </a>
+                </div>
+            </div>
+        }
+    </div>

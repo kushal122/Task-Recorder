@@ -1,0 +1,8 @@
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Release\netcoreapp3.1\TaskRecorder-DataModels.deps.json
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Release\netcoreapp3.1\TaskRecorder-DataModels.dll
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\bin\Release\netcoreapp3.1\TaskRecorder-DataModels.pdb
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Release\netcoreapp3.1\TaskRecorder-DataModels.csprojAssemblyReference.cache
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Release\netcoreapp3.1\TaskRecorder-DataModels.AssemblyInfoInputs.cache
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Release\netcoreapp3.1\TaskRecorder-DataModels.AssemblyInfo.cs
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Release\netcoreapp3.1\TaskRecorder-DataModels.dll
+D:\Projects\Activity Tracking Module\TaskRecordingModule\TaskRecorder\TaskRecorder-DataModels\obj\Release\netcoreapp3.1\TaskRecorder-DataModels.pdb

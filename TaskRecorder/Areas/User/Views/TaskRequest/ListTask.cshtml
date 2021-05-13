@@ -1,0 +1,81 @@
+﻿@model IEnumerable<TaskRecorder_DataModels.Models.TasksModel>
+@{
+    ViewData["Title"] = "ListTask";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container" style="padding:50px">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="text-info">Task List</h2>
+            </div>
+        </div>
+        <br />
+        @if (Model.Any())
+        {
+            <div>
+                <table class="table table-striped border">
+                    <tr class="table-info">
+                        <th>
+                            TaskId
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            UploadedDate
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            AssignedTo
+                        </th>
+                        <th>
+                            IsConfirmed
+                        </th>
+                        <th>
+                            UserId
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach (var task in Model)
+                    {
+                        <tr>
+                            <td>@task.TaskId</td>
+                            <td>@task.Title</td>
+                            <td>@task.Description</td>
+                            <td>@task.UploadedDate</td>
+                            <td>@task.Status</td>
+                            <td>@task.AssignedTo</td>
+                            <td>@task.IsConfirmed</td>
+                            <td>@task.UserId</td>
+
+                            <td>
+                                <div class="btn-group">
+                                    <a asp-controller="TaskRequest" asp-action="Details" asp-route-taskId="@task.TaskId" class="btn btn-success">
+                                        Detail
+                                    </a>
+                                    <a asp-controller="TaskRequest" asp-action="TaskRequest" asp-route-taskId="@task.TaskId" class="btn btn-success">
+                                        Request Task
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="card">
+                <div class="card-header">
+                    No Task created yet
+                </div>
+            </div>
+        }
+    </div>
+

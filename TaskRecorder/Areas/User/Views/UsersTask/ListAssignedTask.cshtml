@@ -1,0 +1,96 @@
+﻿@model IEnumerable<TaskRecorder_DataModels.Models.TasksModel>
+@{
+    ViewData["Title"] = "ListAssignedTask";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="padding:50px">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-info">Task List</h2>
+        </div>
+    </div>
+    <br />
+    <form asp-controller="Task" asp-action="SearchTerm">
+        <p>
+            Title: <input type="text" name="SearchString">
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+    <br />
+    <br />
+    @if (Model.Any())
+    {
+        <div>
+            <table class="table table-striped border">
+                <tr class="table-info">
+                    <th>
+                        TaskId
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        UploadedDate
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        AssignedTo
+                    </th>
+                    <th>
+                        IsConfirmed
+                    </th>
+                    <th>
+                        UserId
+                    </th>
+                    <th>Action</th>
+                </tr>
+                @foreach (var task in Model)
+                {
+                    <tr>
+                        <td>@task.TaskId</td>
+                        <td>@task.Title</td>
+                        <td>@task.Description</td>
+                        <td>@task.UploadedDate</td>
+                        <td>@task.Status</td>
+                        <td>@task.AssignedTo</td>
+                        <td>@task.IsConfirmed</td>
+                        <td>@task.UserId</td>
+
+                        <td>
+                            <div class="btn-group">
+                                @if (task.Status != "Task Completed")
+                                {
+                                    <a asp-area="User" asp-controller="UsersTask" asp-action="Completed" asp-route-taskId="@task.TaskId" class="btn btn-danger"
+                                       onclick="return confirm('Are you sure  task :@task.Title + is completed')">
+                                        Completed
+                                    </a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header">
+                Task
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    No task assigned yet.
+                </h5>
+
+            </div>
+        </div>
+    }
+</div>
+

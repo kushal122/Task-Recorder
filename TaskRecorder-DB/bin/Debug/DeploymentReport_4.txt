@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Tasks]
+       [dbo].[Users]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [dbo].[Roles] (Table)
+       [dbo].[TaskRequest] (Table)
+       [dbo].[UserRoles] (Table)
+     Table rebuild
+       [dbo].[Tasks] (Table)
+       [dbo].[Users] (Table)
+
+** Supporting actions

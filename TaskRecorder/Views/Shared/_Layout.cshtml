@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Layout/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Layout/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Layout/css/datepicker3.css" rel="stylesheet">
+    <link href="~/Layout/css/styles.css" rel="stylesheet">
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>TaskManager</span>Admin</a>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <em class="fa fa-user"></em><span class="label label-danger">15</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <div class="message-body">
+                                            <a href="@Url.Action("Details", "AdminDashboard", new { Area = "Administration" })"><strong>Profile</strong>.</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>   
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <div class="message-body">
+                                            <a href="@Url.Action("SignOut", "AdminLogin", new { Area = "Administration" })"><strong>LogOut</strong>.</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                            else if (User.IsInRole("User"))
+                            {
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <div class="message-body">
+                                            <a href="@Url.Action("Details", "UserDashboard", new { Area = "User" })"><strong>Profile</strong>.</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="dropdown-messages-box">
+                                        <div class="message-body">
+                                            <a href="@Url.Action("SignOut", "UserLogin", new { Area = "User" })"><strong>LogOut</strong>.</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <div class="profile-sidebar">
+            <div class="profile-userpic">
+                <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
+            </div>
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">Username</div>
+                <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="divider"></div>
+        <form role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
+        <ul class="nav menu">
+
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="active"><a href="@Url.Action("Dashboard", "AdminDashboard", new { Area = "Administration" })"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+                <li><a href="@Url.Action("ListRoles", "Role", new { Area = "Administration" })"><em class="fa fa-bar-chart">&nbsp;</em>Role</a></li>
+                <li><a href="@Url.Action("ListUsers", "Users", new { Area = "Administration" })"><em class="fa fa-calendar">&nbsp;</em> User</a></li>
+                <li><a href="@Url.Action("ListTask", "Task", new { Area = "Administration" })"><em class="fa fa-calendar">&nbsp;</em>Task</a></li>
+                <li><a href="@Url.Action("ListTaskRequests", "TaskRequests", new { Area = "Administration" })"><em class="fa fa-calendar">&nbsp;</em>Task Requests</a></li>
+                <li><a href="@Url.Action("ListActivity", "UserActivity", new { Area = "Administration" })"><em class="fa fa-calendar">&nbsp;</em>User Activity</a></li>
+                <li><a href="@Url.Action("ListActivity", "NonUserActivity", new { Area = "Administration" })"><em class="fa fa-calendar">&nbsp;</em>NonUser Activity</a></li>
+            }
+            else if (User.IsInRole("User"))
+            {
+                <li class="active"><a href="@Url.Action("Dashboard", "UserDashboard", new { Area = "User" })"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+                <li><a href="@Url.Action("ListTask", "TaskRequest", new { Area = "User" })"><em class="fa fa-calendar">&nbsp;</em>Task</a></li>
+                <li><a href="@Url.Action("ListMyRequestTask", "TaskRequest", new { Area = "User" })"><em class="fa fa-calendar">&nbsp;</em>Reuested Task</a></li>
+                <li><a href="@Url.Action("ListAssignedTask", "UsersTask", new { Area = "User" })"><em class="fa fa-calendar">&nbsp;</em>My Task</a></li>
+            }
+          
+        </ul>
+    </div><!--/.sidebar-->
+    <div>
+        <div class="container" style="padding:50px">
+            <br />
+            @RenderBody()
+            <br />
+        </div>
+    </div>
+    <div class="Fotters">
+        <div class="col-sm-12">
+            <p class="back-link">Theme by <a href="https://www.medialoot.com">Rabin Raut</a></p>
+        </div>
+    </div>
+    <script src="~/Layout/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Layout/js/bootstrap.min.js"></script>
+    <script src="~/Layout/js/chart.min.js"></script>
+    <script src="~/Layout/js/chart-data.js"></script>
+    <script src="~/Layout/js/easypiechart.js"></script>
+    <script src="~/Layout/js/easypiechart-data.js"></script>
+    <script src="~/Layout/js/bootstrap-datepicker.js"></script>
+    <script src="~/Layout/js/custom.js"></script>
+    <script>
+        window.onload = function () {
+            var chart1 = document.getElementById("line-chart").getContext("2d");
+            window.myLine = new Chart(chart1).Line(lineChartData, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+        };
+    </script>
+</body>
+</html>

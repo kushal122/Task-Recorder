@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TaskRecorder_DataModels.Models.Roles>
+@{
+    ViewData["Title"] = "ListRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container" style="padding:50px">
+        <a class="btn btn-primary mb-3 pull-right" style="width:auto" asp-action="CreateRole"
+           asp-controller="Role">Add new role</a>
+        @if (Model.Any())
+        {
+            <br />
+            <hr />
+            foreach (var role in Model)
+            {
+                <div class="card mb-3">
+                    <div class="card-header">
+                        Role Id : @role.RoleId
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@role.RoleName</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary" asp-area="Administration" asp-controller="Role" asp-action="EditRole" asp-route-id="@role.RoleId">Edit</a>
+                        <a class="btn btn-primary" asp-area="Administration" asp-controller="Role" asp-action="DeleteRole" asp-route-id="@role.RoleId"> Delete</a>
+                    </div>
+                </div>
+                <br />
+                <hr />
+            }
+        }
+        else
+        {
+          <h1 class="text-center text-danger">No Recoud Found</h1>
+        }
+    </div>
+
